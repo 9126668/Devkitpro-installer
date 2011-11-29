@@ -189,20 +189,36 @@ then
   echo "Extracting $BINUTILS"
   tar -xjf $SRCDIR/$BINUTILS || { echo "Error extracting "$BINUTILS; exit 1; }
 
+  echo "Downloading $GCC_CORE"
+  cd $SRCDIR
+  wget http://ftp.gnu.org/gnu/gcc/gcc-4.6.1/gcc-core-4.6.1.tar.bz2 
+  cd ..
   echo "Extracting $GCC_CORE"
   tar -xjf $SRCDIR/$GCC_CORE || { echo "Error extracting "$GCC_CORE; exit 1; }
 
+  echo "Downloading $GCC_GPP"
+  cd $SRCDIR
+  wget http://ftp.gnu.org/gnu/gcc/gcc-4.6.1/gcc-g++-4.6.1.tar.bz2
+  cd ..
   echo "Extracting $GCC_GPP"
   tar -xjf $SRCDIR/$GCC_GPP || { echo "Error extracting "$GCC_GPP; exit 1; }
 
+  echo "Downloading $GCC_OBJC"
+  cd $SRCDIR
+  wget http://ftp.gnu.org/gnu/gcc/gcc-4.6.1/gcc-objc-4.6.1.tar.bz2
+  cd ..
   echo "Extracting $GCC_OBJC"
   tar -xjf $SRCDIR/$GCC_OBJC || { echo "Error extracting "$GCC_OBJC; exit 1; }
 
   echo "Extracting $NEWLIB"
   tar -xzf $SRCDIR/$NEWLIB || { echo "Error extracting "$NEWLIB; exit 1; }
 
+  echo "Downloading $GDB"
+  cd $SRCDIR
+  wget http://mirrors.usc.edu/pub/gnu/gdb/gdb-7.2.tar.bz2
+  cd ..
   echo "Extracting $GDB"
-  tar -xjf $SRCDIR/$GDB || { echo "Error extracting "$GCC_GPP; exit 1; }
+  tar -xjf $SRCDIR/$GDB || { echo "Error extracting "$GDB; exit 1; }
 
   echo "Extracting $LIBOGC"
   mkdir -p $LIBOGC_SRCDIR
